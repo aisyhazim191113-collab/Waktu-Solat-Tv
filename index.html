@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Waktu Solat — MySolat (Percuma)</title>
+  <meta name="description" content="Aplikasi Waktu Solat PWA — dapatkan waktu solat berdasarkan lokasi anda.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icons/icon-192.png">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="icons/icon-192.png" alt="logo" class="logo">
+        <h1>Waktu Solat</h1>
+      </div>
+      <p id="locationText">Mencari lokasi…</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <div id="status" class="muted">Memuatkan waktu solat…</div>
+        <ul id="prayerTimes" class="times-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="card settings">
+        <h2>Tetapan</h2>
+        <label for="methodSelect">Kaedah pengiraan</label>
+        <select id="methodSelect">
+          <option value="2">Muslim World League (MWL)</option>
+          <option value="1">University of Islamic Sciences, Karachi</option>
+          <option value="4">Egyptian General Authority</option>
+          <option value="3">Umm al-Qura, Makkah</option>
+        </select>
+
+        <div class="row">
+          <button id="refreshBtn" class="btn">Segarkan</button>
+          <button id="notifyBtn" class="btn secondary">Minta Notifikasi</button>
+        </div>
+        <p class="muted small">Notifikasi yang diberi di sini hanya berfungsi jika laman dibuka dan diberi kebenaran. Untuk notifikasi latar diperlukan push server (contoh: Firebase).</p>
+      </section>
+
+      <section class="card about">
+        <h2>Mengenai</h2>
+        <p>Data waktu diperoleh dari <strong>Aladhan API</strong>. Aplikasi ini adalah PWA — tambah ke Homescreen untuk akses pantas.</p>
+      </section>
+    </main>
+
+    <footer>
+      <small>Direka untuk kegunaan peribadi — versi percuma. &copy; <span id="year"></span></small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
